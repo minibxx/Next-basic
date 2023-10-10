@@ -1,16 +1,19 @@
 "use client";
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 function Insert() {
+	const navi = useRouter();
 	const insertFn = (e) =>{
 		e.preventDefault();
+		
 		const formdata = new FormData(e.target);
 		const values = Object.fromEntries(formdata);
 		console.log(values);
 
 		axios.post('/api', values);
-		navigator.push('./list');
+		navi.push('./list');
 	}
 
   return (
