@@ -1,10 +1,10 @@
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
-  host     : 'svc.sel5.cloudtype.app',
-  user     : 'root',
-  password : '1234',
-  database : 'mariadb_test',
-  port: '31913'
+  host     : process.env.NEXT_PUBLIC_HOST,
+  user     : process.env.NEXT_PUBLIC_USER,
+  password : process.env.NEXT_PUBLIC_PASSWORD,
+  database : process.env.NEXT_PUBLIC_DATABASE,
+  port: process.env.NEXT_PUBLIC_PORT
 });
  
 connection.connect();
